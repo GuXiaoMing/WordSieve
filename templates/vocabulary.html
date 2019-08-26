@@ -1,0 +1,16 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/vocabulary.css') }}">
+<table>
+    <tr>
+        {% for col in df.columns %}
+            <th>{{col}}</th>
+        {% endfor %}
+    </tr>
+    {% for _, row in df.iterrows() %}
+        <tr>
+            {% for col in df.columns%}
+                <td>{{row[col]}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
