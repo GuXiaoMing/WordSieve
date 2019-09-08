@@ -1,0 +1,8 @@
+{% for meaning in meanings %}
+    <li>
+        <span class="pos" style="font-weight:bold">{{ meaning.speech_part }}.</span> <span class="def">{{ meaning.def }}</span>
+        {% if meaning.example %}
+            <p class="example" style="color:lightsalmon"><em>"{{ meaning.example }}"</em></p>
+        {% endif %}
+    </li>
+{% endfor %}
