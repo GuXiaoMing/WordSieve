@@ -4,7 +4,6 @@ import json
 from flask import Flask
 from flask import render_template
 from jinja2 import Environment, PackageLoader, select_autoescape
-from waitress import serve
 import pandas as pd
 
 from processor.resultloader import load_sentences, load_vocabulary
@@ -51,5 +50,4 @@ def index():
     return render_template("vocabulary.html", df=df)
 
 if __name__ == "__main__":
-    # app.run(host="0.0.0.0", port="5000", debug=False)
-    serve(app, host="0.0.0.0", port="5000")
+    app.run(host="0.0.0.0", port="5000", debug=False)
